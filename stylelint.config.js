@@ -1,5 +1,6 @@
 module.exports = {
   extends: 'stylelint-config-standard',
+  processors: ['stylelint-processor-html'],
   rules: {
     // Avoid missing ampersands when using nested css4
     // See example matches here: http://regexr.com/3flmj

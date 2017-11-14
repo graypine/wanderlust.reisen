@@ -25,7 +25,7 @@
       <button v-on:click="gotoPage(currentPage - 1)"
               class="button-primary"
               v-bind:disabled="currentPage === 0">
-        🠄
+        <
       </button>
 
       <button
@@ -39,7 +39,7 @@
               class="button-primary"
               v-bind:disabled="currentPage === pageIndex.length - 1"
               >
-        🠆
+        >
       </button>
     </div>
   </div>
@@ -83,22 +83,13 @@ export default {
           }
           data.currentPhotos = data.photoPages[0]
         }, response => {
-          console.log('response failed')
         })
     },
     gotoPage: (page) => {
-    console.log('page')
-    console.log(page)
-    console.log(!page)
-    console.log(!data.photoPages[page])
-    console.log(data.photoPages[page])
-    console.log(data.pageIndex)
       if (!data.photoPages[page]) {
         return
       }
-      console.log('setting page');
       data.currentPage = page;
-      console.log(data.currentPage);
       data.currentPhotos = data.photoPages[page]
     }
   },
@@ -110,6 +101,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* stylelint-disable */
 h1,
 h2 {
   font-weight: normal;
@@ -123,7 +115,6 @@ h2 {
   text-align: center;
 }
 
-/* stylelint-disable */
 .button-primary,
 button.button-primary:disabled {
   color: #260000;

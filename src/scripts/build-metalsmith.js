@@ -6,7 +6,9 @@ import metalsmith from './metalsmith'
 
 const debug = Debug('metalsmith-webpack-suite')
 
-metalsmith.build(function (err) {
+let msmith = metalsmith.create()
+
+msmith.build(function (err) {
   if (err) {
     debug(err)
     throw err

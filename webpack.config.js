@@ -2,6 +2,7 @@ const { join } = require('path')
 const Webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const BabiliPlugin = require("babili-webpack-plugin");
 const utils = require('./utils')
 const vueLoaderConfig = require('./vue-loader.conf')
 
@@ -88,7 +89,7 @@ if (__PROD__) {
     }
   }))
   config.plugins.push(new Webpack.optimize.AggressiveMergingPlugin())
-  config.plugins.push(new Webpack.optimize.UglifyJsPlugin())
+  config.plugins.push(new BabiliPlugin())
 }
 
 module.exports = config
