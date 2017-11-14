@@ -1,22 +1,22 @@
 import Handlebars from 'handlebars'
 
 exports.even = (conditional, options) => {
-  if((conditional % 2) === 0) {
-    return options.fn(this);
+  if ((conditional % 2) === 0) {
+    return options.fn(this)
   }
   else {
-    return options.inverse(this);
+    return options.inverse(this)
   }
 }
 
 exports.formatTime = (date, format) => {
-    const d = new Date(date);
-    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+  const d = new Date(date)
+  return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
 }
 
 exports.yearFromDate = (date) => {
-  const d = new Date(date);
-  return d.getFullYear();
+  const d = new Date(date)
+  return d.getFullYear()
 }
 
 exports.site = (parm, options) => {
@@ -29,7 +29,7 @@ exports.eachLimit = (arr, max, options) => {
     return result
   }
   for (let i = 0; i < max; i++) {
-    arr[i]['@index'] = i;
+    arr[i]['@index'] = i
     result.push(options.fn(arr[i]))
   }
   return result.join('')
@@ -45,5 +45,4 @@ exports.register = () => {
   Handlebars.registerHelper('site', exports.site)
 
   Handlebars.registerHelper('each_limit', exports.eachLimit)
-
 }

@@ -44,12 +44,6 @@ function buildMetalsmith (rebuild) {
     debug('Metalsmith build successfully finished! Reloading browsers.')
     browserSync.reload()
   })
-
-
-
-
-
-
 }
 
 // Reload all devices when webpack bundle is complete

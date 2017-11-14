@@ -8,13 +8,12 @@ import assets from 'metalsmith-assets'
 import fingerprint from 'metalsmith-fingerprint-ignore'
 import writemetadata from 'metalsmith-writemetadata'
 import sitemap from 'metalsmith-sitemap'
-import Handlebars from 'handlebars'
 import hbsHelpers from './handlebars-helpers'
 
 import paths from '../config/paths'
 import { StatisticsPlugin } from './metalsmith-helpers'
 
-const __PROD__ = process.env.NODE_ENV === 'production'
+// const __PROD__ = process.env.NODE_ENV === 'production'
 
 exports.test = 'test'
 
@@ -60,7 +59,7 @@ exports.create = () => {
             path: 'content/photographs.json',
             asObject: true,
             metadata: {
-              type: "list"
+              type: 'list'
             }
           },
           ignorekeys: ['contents', 'next', 'previous']
@@ -89,5 +88,4 @@ exports.create = () => {
     .use(StatisticsPlugin())
     // Import above and use the debug plugin to get more detailed information
     // .use(DebugPlugin())
-
 }

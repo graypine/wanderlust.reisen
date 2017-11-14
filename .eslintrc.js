@@ -5,5 +5,9 @@ module.exports = {
     "plugins": [
         "standard",
         "babel"
-    ]
+    ],
+    "rules": {
+    "brace-style": ["error", "stroustrup"],
+    "no-new": ["warn"]
+  }
 };
