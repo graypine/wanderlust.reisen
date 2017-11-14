@@ -17,7 +17,7 @@ export default function () {
 
 Vue.use(VueResource)
 
-let app = new Vue({
+new Vue({
   el: '#msg-pagination',
   render: h => h(Pagination),
   methods: {
